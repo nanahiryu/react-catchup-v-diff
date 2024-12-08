@@ -26,7 +26,7 @@ const ActionState = () => {
 
   return (
     <VStack w="full" p={4}>
-      <form action={submitAction}>
+      <form action={submitAction} style={{ width: "100%" }}>
         <Flex direction="column" gap={4}>
           <Field label="タイトル">
             <Input

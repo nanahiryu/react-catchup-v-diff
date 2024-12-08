@@ -20,7 +20,7 @@ const Transition = () => {
   };
   return (
     <VStack w="full" p={4}>
-      <form action={handleSubmit}>
+      <form action={handleSubmit} style={{ width: "100%" }}>
         <Flex direction="column" gap={4}>
           <Field label="タイトル">
             <Input

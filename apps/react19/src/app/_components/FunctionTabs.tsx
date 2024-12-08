@@ -1,11 +1,13 @@
+"use client";
+
 import { Flex, Tabs } from "@chakra-ui/react";
 import { tabs, TabsContext } from "@/contexts/tabs";
 import { useContext } from "react";
 
 export const FunctionTabs = () => {
-  const { setActiveTab } = useContext(TabsContext);
+  const { activeTab, setActiveTab } = useContext(TabsContext);
   return (
-    <Tabs.Root>
+    <Tabs.Root defaultValue={activeTab}>
       <Tabs.List p={4}>
         {tabs.map((tab) => (
           <Tabs.Trigger

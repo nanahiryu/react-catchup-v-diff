@@ -1,4 +1,5 @@
 "use client";
+
 import { VStack } from "@chakra-ui/react";
 import { ThemeToggle } from "./_components/ThemeToggle";
 import { FunctionTabs } from "./_components/FunctionTabs";
