@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/style/globals.css";
 import { Provider } from "@/components/ui/provider";
+import { ContextProvider } from "@/contexts/provider";
 
 export const metadata: Metadata = {
   title: "React19",
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning>
       <body>
-        <Provider>{children}</Provider>
+        <Provider>
+          <ContextProvider>{children}</ContextProvider>
+        </Provider>
       </body>
     </html>
   );
