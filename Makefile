@@ -1,6 +1,6 @@
 build:
 	docker compose -f compose-dev.yaml build
-run_react19:
+up_react19:
 	docker compose -f compose-dev.yaml up react19 -d
 down_react19:
 	docker compose -f compose-dev.yaml down react19
