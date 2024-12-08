@@ -1,0 +1,13 @@
+services:
+  react19:
+    build:
+      context: .
+      dockerfile: apps/react19/Dockerfile
+    ports:
+      - "3000:3000" # Next.js のデフォルトポート
+    volumes:
+      - .:/app
+    environment:
+      NODE_ENV: development
+    working_dir: /app/apps/react19
+    command: "pnpm dev"
