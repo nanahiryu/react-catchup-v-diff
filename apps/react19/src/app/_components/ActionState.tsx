@@ -9,20 +9,17 @@ const ActionState = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
-  const [error, submitAction, isPending] = useActionState(
-    async () => {
-      // titleがfooの場合はエラー
-      if (title === "foo") {
-        return { success: false, error: "title is foo" };
-      }
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      await postPosts({ title, body });
-      setTitle("");
-      setBody("");
-      return { success: true, message: "your post has been created" };
-    },
-    { success: true, message: "" }
-  );
+  const [error, submitAction, isPending] = useActionState(async () => {
+    // titleがfooの場合はエラー
+    if (title === "foo") {
+      return { success: false, error: "title is foo" };
+    }
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await postPosts({ title, body });
+    setTitle("");
+    setBody("");
+    return { success: true, message: "your post has been created" };
+  }, null);
 
   return (
     <VStack w="full" p={4}>
@@ -51,7 +48,9 @@ const ActionState = () => {
           </Button>
         </Flex>
       </form>
-      <Text color={error.success ? "teal" : "red"}>{error.message}</Text>
+      <Text color={error && error.success ? "teal" : "red"}>
+        {error?.message}
+      </Text>
     </VStack>
   );
 };
