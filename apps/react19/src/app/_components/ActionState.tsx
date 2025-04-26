@@ -2,7 +2,7 @@
 import { postPosts } from "@/functions/api";
 import { Flex, Input, Text, Textarea, VStack } from "@chakra-ui/react";
 import { Field } from "@/components/ui/field";
-import { useActionState, useState, useTransition } from "react";
+import { useActionState, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const ActionState = () => {
@@ -12,7 +12,7 @@ const ActionState = () => {
   const [error, submitAction, isPending] = useActionState(async () => {
     // titleがfooの場合はエラー
     if (title === "foo") {
-      return { success: false, error: "title is foo" };
+      return { success: false, message: "title is foo" };
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));
     await postPosts({ title, body });
