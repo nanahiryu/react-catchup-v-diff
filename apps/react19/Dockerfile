@@ -7,5 +7,4 @@ WORKDIR /app
 RUN pnpm install
 RUN cd apps/react19 && pnpm build
 
-EXPOSE 3000
 CMD [ "pnpm", "start" ]
