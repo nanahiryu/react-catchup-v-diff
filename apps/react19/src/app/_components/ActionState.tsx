@@ -23,6 +23,13 @@ const ActionState = () => {
 
   return (
     <VStack w="full" p={4}>
+      <Flex fontSize="sm" color="gray.500" mb={4}>
+        useActionStateを使用して、非同期処理中のローディング状態を管理し、ユーザーフィードバックを提供するデモです。
+        <br />
+        送信ボタンのクリックによって、非同期処理が開始され、非同期処理が完了するまでpending状態になります。
+        <br />
+        エラーが発生した場合は、エラーメッセージが表示されます。(titleがfooの場合)
+      </Flex>
       <form action={submitAction} style={{ width: "100%" }}>
         <Flex direction="column" gap={4}>
           <Field label="タイトル">

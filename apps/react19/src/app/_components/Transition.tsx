@@ -20,6 +20,11 @@ const Transition = () => {
   };
   return (
     <VStack w="full" p={4}>
+      <Flex fontSize="sm" color="gray.500" mb={4}>
+        useTransitionを使用して、非同期処理中のローディング状態を管理し、ユーザーフィードバックを提供するデモです。
+        <br />
+        送信ボタンのクリックによって、非同期処理が開始され、非同期処理が完了するまでpending状態になります。
+      </Flex>
       <form action={handleSubmit} style={{ width: "100%" }}>
         <Flex direction="column" gap={4}>
           <Field label="タイトル">
