@@ -23,7 +23,7 @@ const ActionState = () => {
 
   return (
     <VStack w="full" p={4}>
-      <Flex fontSize="sm" color="gray.500" mb={4}>
+      <Flex fontSize="sm" color="gray.500" mb={4} w="full">
         useActionStateを使用して、非同期処理中のローディング状態を管理し、ユーザーフィードバックを提供するデモです。
         <br />
         送信ボタンのクリックによって、非同期処理が開始され、非同期処理が完了するまでpending状態になります。

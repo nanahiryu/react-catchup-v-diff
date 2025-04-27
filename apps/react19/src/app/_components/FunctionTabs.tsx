@@ -7,8 +7,8 @@ import { useContext } from "react";
 export const FunctionTabs = () => {
   const { activeTab, setActiveTab } = useContext(TabsContext);
   return (
-    <Tabs.Root defaultValue={activeTab}>
-      <Tabs.List p={4}>
+    <Tabs.Root defaultValue={activeTab} w="full">
+      <Tabs.List p={4} w="full">
         {tabs.map((tab) => (
           <Tabs.Trigger
             key={tab.label}
@@ -20,7 +20,7 @@ export const FunctionTabs = () => {
         ))}
       </Tabs.List>
       {tabs.map((tab) => (
-        <Tabs.Content key={tab.label} value={tab.label}>
+        <Tabs.Content key={tab.label} value={tab.label} w="full">
           <tab.components />
         </Tabs.Content>
       ))}
