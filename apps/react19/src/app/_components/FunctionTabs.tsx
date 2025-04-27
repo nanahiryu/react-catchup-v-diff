@@ -1,7 +1,7 @@
 "use client";
 
 import { Flex, Tabs } from "@chakra-ui/react";
-import { tabs, TabsContext } from "@/contexts/tabs";
+import { tabs, TabsContext } from "@/provider/tabs";
 import { useContext } from "react";
 
 export const FunctionTabs = () => {
