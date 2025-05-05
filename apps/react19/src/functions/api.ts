@@ -1,3 +1,5 @@
+"use server";
+
 export const fetchPosts = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await res.json();
