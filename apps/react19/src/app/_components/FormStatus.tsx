@@ -5,6 +5,7 @@ import { Field } from "@/components/ui/field";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useFormStatus } from "react-dom";
+import { convertFormDataToString } from "@/utils/formData";
 
 const FormStatus = () => {
   const handleSubmit = async (formData: FormData) => {
@@ -50,18 +51,8 @@ const FormButton = () => {
 const FormStatusOutput = () => {
   const { pending, data, method } = useFormStatus();
 
-  // FormDataオブジェクトを文字列に変換する方法
-  const formDataString = data
-    ? JSON.stringify(
-        Array.from(data instanceof FormData ? data.entries() : []).reduce(
-          (obj: Record<string, string>, [key, value]) => {
-            obj[key] = value.toString();
-            return obj;
-          },
-          {}
-        )
-      )
-    : "なし";
+  // 関数化したutilsを使用
+  const formDataString = convertFormDataToString(data);
 
   return (
     <Stack>
